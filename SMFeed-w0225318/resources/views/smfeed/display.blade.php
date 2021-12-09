@@ -10,6 +10,7 @@
                 <div class="card-body">
 
                     <table class="table">
+                        <a class="btn btn-success" href="/admin/users/create" role="button">Create new admin user</a>
                         <thead>
                         <tr>
                             <th scope="col">Name</th>
@@ -19,16 +20,28 @@
                         </tr>
                         </thead>
                         <tbody>
-                        @forelse ($users as $user)
+
+                        @forelse ($users as $index => $user)
+
 
                         <tr>
                             <td>{{$user->name}}</td>
                             <td>{{$user->email}}</td>
-                            <td>{{$role->name}}</td>
-                            <td></td>
+                            <td>{{$roles[$index]->name}}</td>
+                            <td>
+                                <a class="btn btn-success" href="/admin/users/{{$user->id}}" role="button">Show</a>
+                                <a class="btn btn-warning" href="/admin/users/{{$user->id}}/edit" role="button">Edit</a>
+                                <form action="/admin/users/{{$user -> id}}" method="post">
+                                    @method('delete')
+                                    @csrf
+                                    <button class="btn btn-danger">Delete</button>
+                                </form>
+                            </td>
                         </tr>
+
                         @empty
                         @endforelse
+
 
                         </tbody>
                     </table>

@@ -15,6 +15,9 @@
                     @endif
 
                     You are logged in!
+                    <div>
+                        <a class="btn btn-success" href="/posts/" role="button">View feed</a>
+                    <div/>
                 </div>
             </div>
         </div>

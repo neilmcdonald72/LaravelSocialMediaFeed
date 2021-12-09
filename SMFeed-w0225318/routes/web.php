@@ -20,3 +20,17 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/admin/users', 'SMFeedController@users');
+
+Route::get('/admin/users/create', 'SMFeedController@create');
+Route::post('/admin/users', 'SMFeedController@store');
+Route::get('/admin/users/{userId?}', 'SMFeedController@show');
+Route::delete('/admin/users/{userId?}', 'SMFeedController@destroy');
+Route::get('/admin/users/{userId?}/edit', 'SMFeedController@edit');
+Route::patch('/admin/users/{userId?}', 'SMFeedController@update');
+Route::get('/posts/create', 'SMFeedController@createpost');
+Route::post('/posts/', 'SMFeedController@storepost');
+Route::get('/posts/', 'SMFeedController@showposts');
+Route::get('/posts/{postId?}/edit', 'SMFeedController@editpost');
+Route::patch('/posts/{postId?}', 'SMFeedController@updatepost');
+Route::delete('/posts/{postId?}', 'SMFeedController@destroypost');
+
