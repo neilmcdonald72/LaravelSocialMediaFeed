@@ -19,9 +19,9 @@ class CreatePostsTable extends Migration
             $table->string('content');
             $table->unsignedBigInteger('created_by')->nullable();
             $table->unsignedBigInteger('deleted_by')->nullable();
-            $table->dateTime('created_at', 0);
-            $table->dateTime('updated_at', 0);
-            $table->dateTime('deleted_at', 0);
+            $table->dateTime('created_at', 0)->nullable();
+            $table->dateTime('updated_at', 0)->nullable();
+            $table->dateTime('deleted_at', 0)->nullable();
 
 
         });
