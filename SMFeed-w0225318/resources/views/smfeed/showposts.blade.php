@@ -1,9 +1,14 @@
 @extends('layouts.app')
 
 @section('content')
+
     <div class="container">
+
         <div class="row justify-content-center">
+
             <div class="col-md-8">
+                <a class="btn btn-success" href="/admin/users" role="button">User Admin Page</a>
+
                 @if ( $currentuser != null)
                     <a class="btn btn-success" href="/posts/create" role="button">Create new post</a>
                 @endif
@@ -15,6 +20,7 @@
                             {{$post->created_at}}
                         </div>
                     </div>
+
 
                     <div class="card-body">
                         <h2>{{$post->content}}</h2>
